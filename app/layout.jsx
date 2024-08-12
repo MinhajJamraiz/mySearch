@@ -2,6 +2,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Header from "./components/Header";
+import SessionWrapper from "./api/components/SessionWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -17,10 +18,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={poppins.className}>
-        <Header />
-        {children}
-      </body>
+      <SessionWrapper>
+        <body className={poppins.className}>
+          <Header />
+          {children}
+        </body>
+      </SessionWrapper>
     </html>
   );
 }

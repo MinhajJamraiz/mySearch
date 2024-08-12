@@ -19,6 +19,7 @@ const HomePage = () => {
   if (loading) {
     return <LoadingPage />;
   }
+
   return (
     <>
       <h1 style={{ textAlign: "center" }}>Welcome to MySearch</h1>
